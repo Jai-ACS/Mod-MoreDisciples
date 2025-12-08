@@ -1,4 +1,5 @@
 local Mod = GameMain:GetMod("Jai_MoreDisciples");--先注册一个新的MOD模块
+local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 
 local Windows = GameMain:GetMod("Windows")
 local tbWindow = Windows:CreateWindow("Jai_MoreDisciplesWindow")
@@ -23,6 +24,20 @@ end
 function Mod:OnSave()
 	local data = self.data or {}
 	return data
+end
+
+function Mod:OnOnit()
+	self.data = self.data or {}
+
+	if Adapter == nil then
+		return
+	end
+	
+	Adapter:register("More Disciples", "Configuration Panel",
+		function()
+			tbWindow:Show()
+		end
+	)
 end
 
 function Mod:OnEnter()

@@ -9,10 +9,31 @@ local sizes = {
 	{48,48,60,72}
 }
 
-function Mod:OnEnter()
-	CS.XiaWorld.GameDefine.SchoolMaxNpc = {6,12,18,24}
+function Mod:OnLoad(tbLoad)
+    self.data = tbLoad or {}
+	local index = 0
 
-	CS.XiaWorld.GameDefine.SchoolMaxDNpc ={6,12,18,24};
+	if self.data ~= nil and self.data.index ~= nil then
+		index = self.data.index
+	end
+	
+    self:setMaxDisciples(index)
+end
+
+function Mod:OnSave()
+	local data = self.data or {}
+	return data
+end
+
+function Mod:OnEnter()
+	--CS.XiaWorld.GameDefine.SchoolMaxNpc = {6,12,18,24}
+
+	--CS.XiaWorld.GameDefine.SchoolMaxDNpc ={6,12,18,24};
+end
+
+function Mod:setMaxDisciples(index)
+	CS.XiaWorld.GameDefine.SchoolMaxNpc = sizes[index]
+	CS.XiaWorld.GameDefine.SchoolMaxDNpc = sizes[index]
 end
 
 function tbWindow:OnInit()
@@ -48,9 +69,11 @@ function tbWindow:OnInit()
 		function(context)
 			local controller = context.sender;
 			local index = controller.selectedIndex;
+
+			Mod.data = Mod.data or {}
+			Mod.data.index = index
 			
-			CS.XiaWorld.GameDefine.SchoolMaxNpc = sizes[index]
-			CS.XiaWorld.GameDefine.SchoolMaxDNpc = sizes[index]
+			Mod:setMaxDisciples(index)
 		end
 	)
 end

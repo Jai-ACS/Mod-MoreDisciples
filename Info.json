@@ -1,0 +1,13 @@
+{
+	"Name": "Jai_MoreDisciples",
+	"DisplayName": "More Disciples | 显示门派价格",
+	"GameVersion": 1.2,
+	"Version": 1.0,
+	"Desc": "[Author | 作者]\r\nJai, Akira\r\n\r\n[Introduction | 简介]\r\n※Adapted from More Grid Info mod from desktop version. Shows the prices of items when trading with sects. This version is enhanced, allowing the prices to continue to be shown when the player switches the trade window between different sects.",
+	"Author": "Jai, Akira",
+	"UIPackage": null,
+	"Tags":["Function","Usability","ExcludeRealmsHeaven"],
+	"IncreasedDesc": "",
+	"Previews": [],
+	"ParentModInfo": null
+}

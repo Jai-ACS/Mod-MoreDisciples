@@ -1,7 +1,7 @@
 local Mod = GameMain:GetMod("Jai_MoreDisciples");--先注册一个新的MOD模块
 local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 
-local Windows = GameMain:GetMod("Windows")
+--local Windows = GameMain:GetMod("Windows")
 --local tbWindow = Windows:CreateWindow("Jai_MoreDisciplesWindow")
 
 local sizes = {
@@ -52,44 +52,44 @@ function Mod:setMaxDisciples(index)
 end
 
 --function tbWindow:OnInit()
-function test()
-	self.window.contentPane = UIPackage.CreateObject("Jai_MoreDisciples", "ConfigWindow")
-	self.window.closeButton = self:GetChild("frame"):GetChild("n5")
-	self.window:Center()
+--function test()
+	--self.window.contentPane = UIPackage.CreateObject("Jai_MoreDisciples", "ConfigWindow")
+	--self.window.closeButton = self:GetChild("frame"):GetChild("n5")
+	--self.window:Center()
 	
-	local frame = self:GetChild("frame")
-	--frame.title = XT("快捷键连接器")
-	frame.title = "More Disciples"
+	--local frame = self:GetChild("frame")
+	----frame.title = XT("快捷键连接器")
+	--frame.title = "More Disciples"
 
-	local titleBox = frame:GetChild("n6")
-	local titleText = frame:GetChild("title")
+	--local titleBox = frame:GetChild("n6")
+	--local titleText = frame:GetChild("title")
 
-	titleBox.maxWidth = 200
-	titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
-	titleBox.width = titleText.width + 100
-	titleText.fontsize = 18
-	titleBox.height = 50
-	titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
+	--titleBox.maxWidth = 200
+	--titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
+	--titleBox.width = titleText.width + 100
+	--titleText.fontsize = 18
+	--titleBox.height = 50
+	--titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
 
-	if Mod.data == nil then
-		return
-	end
+	--if Mod.data == nil then
+		--return
+	--end
 
-	--local group = self:GetChild("options")
-	--local optionDefault = group:GetChild("option-default")
-	--local optionDesktop = group:GetChild("option-desktop")
-	--local optionMax = group:GetChild("option-max")
+	----local group = self:GetChild("options")
+	----local optionDefault = group:GetChild("option-default")
+	----local optionDesktop = group:GetChild("option-desktop")
+	----local optionMax = group:GetChild("option-max")
 	
-	local radioController = self:GetController("radio")
-	radioController.onChanged:Add(
-		function(context)
-			local controller = context.sender;
-			local index = controller.selectedIndex;
+	--local radioController = self:GetController("radio")
+	--radioController.onChanged:Add(
+		--function(context)
+			--local controller = context.sender;
+			--local index = controller.selectedIndex;
 
-			Mod.data = Mod.data or {}
-			Mod.data.index = index
+			--Mod.data = Mod.data or {}
+			--Mod.data.index = index
 			
-			Mod:setMaxDisciples(index)
-		end
-	)
-end
+			--Mod:setMaxDisciples(index)
+		--end
+	--)
+--end

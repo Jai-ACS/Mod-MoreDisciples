@@ -9,5 +9,6 @@
 	"Tags":["Function","Usability","ExcludeRealmsHeaven"],
 	"IncreasedDesc": "",
 	"Previews": [],
-	"ParentModInfo": null
+	"ParentModInfo": null,
+	"Dependencies": ["https://github.com/Jai-ACS/Mod-HotkeyAdapter"]
 }

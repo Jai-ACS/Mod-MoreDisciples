@@ -5,7 +5,7 @@
 	"Version": 1.0,
 	"Desc": "Test Version",
 	"Author": "Jai",
-	"UIPackage": "UI/Jai_MoreDisciples",
+	"UIPackage": "UI/Jai_Test12",
 	"Tags": ["Function","Usability","ExcludeRealmsHeaven"],
 	"IncreasedDesc": "",
 	"Dependencies": []

@@ -2,7 +2,7 @@ local Mod = GameMain:GetMod("Jai_MoreDisciples");--先注册一个新的MOD模�
 local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 
 local Windows = GameMain:GetMod("Windows")
-local tbWindow = Windows:CreateWindow("Jai_MoreDisciplesWindow")
+--local tbWindow = Windows:CreateWindow("Jai_MoreDisciplesWindow")
 
 local sizes = {
 	{6,12,18,24},
@@ -35,7 +35,7 @@ function Mod:OnOnit()
 	
 	Adapter:register("More Disciples", "Configuration Panel",
 		function()
-			tbWindow:Show()
+			--tbWindow:Show()
 		end
 	)
 end
@@ -51,7 +51,8 @@ function Mod:setMaxDisciples(index)
 	CS.XiaWorld.GameDefine.SchoolMaxDNpc = sizes[index]
 end
 
-function tbWindow:OnInit()
+--function tbWindow:OnInit()
+function test()
 	self.window.contentPane = UIPackage.CreateObject("Jai_MoreDisciples", "ConfigWindow")
 	self.window.closeButton = self:GetChild("frame"):GetChild("n5")
 	self.window:Center()

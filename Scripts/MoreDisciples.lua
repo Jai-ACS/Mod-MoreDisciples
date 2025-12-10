@@ -12,13 +12,14 @@ local sizes = {
 
 function Mod:OnLoad(tbLoad)
     self.data = tbLoad or {}
-	self.data.index = self.data.index or 0
+	self.data.index = self.data.index or 1
 	
     self:setMaxDisciples(self.data.index)
 end
 
 function Mod:OnSave()
 	local data = self.data or {}
+	data.index = data.index or 1
 	return data
 end
 

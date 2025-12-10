@@ -1,4 +1,4 @@
-local Mod = GameMain:GetMod("Jai_MoreDisciples");--先注册一个新的MOD模块
+local Mod = GameMain:GetMod("Jai_MoreDisciples")
 local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 
 --local Windows = GameMain:GetMod("Windows")
@@ -12,13 +12,9 @@ local sizes = {
 
 function Mod:OnLoad(tbLoad)
     self.data = tbLoad or {}
-	local index = 0
-
-	if self.data ~= nil and self.data.index ~= nil then
-		index = self.data.index
-	end
+	self.data.index = self.data.index or 0
 	
-    self:setMaxDisciples(index)
+    self:setMaxDisciples(self.data.index)
 end
 
 function Mod:OnSave()
@@ -27,7 +23,7 @@ function Mod:OnSave()
 end
 
 function Mod:OnOnit()
-	self.data = self.data or {}
+	-- self.data = self.data or {}
 
 	if Adapter == nil then
 		return
@@ -40,11 +36,10 @@ function Mod:OnOnit()
 	)
 end
 
-function Mod:OnEnter()
+--function Mod:OnEnter()
 	--CS.XiaWorld.GameDefine.SchoolMaxNpc = {6,12,18,24}
-
 	--CS.XiaWorld.GameDefine.SchoolMaxDNpc ={6,12,18,24};
-end
+--end
 
 function Mod:setMaxDisciples(index)
 	CS.XiaWorld.GameDefine.SchoolMaxNpc = sizes[index]

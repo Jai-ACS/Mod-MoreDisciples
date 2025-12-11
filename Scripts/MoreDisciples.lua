@@ -23,9 +23,43 @@ function Mod:OnSave()
 	return data
 end
 
+function Mod:OnRender()
+	if Adapter ~= nil then
+		self.initialized = true
+	end
+	
+	if self.initialized then
+		return
+	end
+
+	if self.count == nil then
+		self.tryGetAdapter()
+		
+		if not self.initialized then
+			self.count = 1
+		end
+	elseif self.count >= 100 then
+		self.tryGetAdapter()
+		count = 1
+	else
+		count = count + 1
+	end
+end
+
+function Mod:tryGetAdapter()
+	Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
+
+	if Adapter ~= nil then
+		self:registerAdapter()
+		self.initialized = true
+	end
+end
+
 function Mod:OnOnit()
 	-- self.data = self.data or {}
+end
 
+function Mod:registerAdapter()
 	if Adapter == nil then
 		return
 	end

@@ -1,4 +1,4 @@
-local Mod = GameMain:GetMod("Jai_MoreDisciples")
+local Jai_MoreDisciples = GameMain:GetMod("Jai_MoreDisciples")
 local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 
 --local Windows = GameMain:GetMod("Windows")
@@ -55,17 +55,15 @@ local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 -- 	end
 -- end
 
-function Mod:OnOnit()
+function Jai_MoreDisciples:OnOnit()
 	-- self.data = self.data or {}
 	self:registerAdapter()
 end
 
-function Mod:registerAdapter()
+function Jai_MoreDisciples:registerAdapter()
 	-- if Adapter == nil then
 	-- 	return
 	-- end
-	local a = 1
-	a:test()
 	
 	Adapter:register("More Disciples", "Configuration Panel",
 		function()

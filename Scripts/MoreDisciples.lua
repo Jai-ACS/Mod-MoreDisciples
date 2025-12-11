@@ -1,5 +1,6 @@
 local Mod = GameMain:GetMod("Jai_MoreDisciples")
 local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
+local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 
 --local Windows = GameMain:GetMod("Windows")
 --local tbWindow = Windows:CreateWindow("Jai_MoreDisciplesWindow")
@@ -65,7 +66,7 @@ function Mod:registerAdapter()
 	-- 	return
 	-- end
 	
-	Adapter:register("More Disciples", "Configuration Panel",
+	Adapter:register("Test", "Test123",
 		function()
 			--tbWindow:Show()
 		end

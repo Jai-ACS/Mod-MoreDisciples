@@ -61,9 +61,9 @@ function Mod:OnOnit()
 end
 
 function Mod:registerAdapter()
-	if Adapter == nil then
-		return
-	end
+	-- if Adapter == nil then
+	-- 	return
+	-- end
 	
 	Adapter:register("More Disciples", "Configuration Panel",
 		function()

@@ -1,5 +1,5 @@
-local Mod = GameMain:GetMod("Jai_MoreDisciples")
 local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
+local Mod = GameMain:GetMod("Jai_MoreDisciples")
 
 --local Windows = GameMain:GetMod("Windows")
 --local tbWindow = Windows:CreateWindow("Jai_MoreDisciplesWindow")

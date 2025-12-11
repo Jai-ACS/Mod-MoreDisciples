@@ -64,6 +64,8 @@ function Mod:registerAdapter()
 	-- if Adapter == nil then
 	-- 	return
 	-- end
+	local a = 1
+	a:test()
 	
 	Adapter:register("More Disciples", "Configuration Panel",
 		function()

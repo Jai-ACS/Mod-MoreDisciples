@@ -6,7 +6,7 @@
 	"Desc": "Test Version",
 	"Author": "Jai",
 	"UIPackage": null,
-	"Tags": ["Function","Usability","ExcludeRealmsHeaven"],
+	"Tags": ["Function","Usability"],
 	"IncreasedDesc": "",
 	"Dependencies": null
 }

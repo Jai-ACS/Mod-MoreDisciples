@@ -61,13 +61,13 @@ function Mod:OnInit()
 end
 
 function Mod:registerAdapter()
-	-- if Adapter == nil then
-	-- 	return
-	-- end
+	if Adapter == nil then
+		return
+	end
 	
 	Adapter:register("Test", "Test123",
 		function()
-			--tbWindow:Show()
+			tbWindow:Show()
 		end
 	)
 end

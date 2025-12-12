@@ -1,28 +1,27 @@
 local Mod = GameMain:GetMod("Jai_MoreDisciples")
 local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
-local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 
---local Windows = GameMain:GetMod("Windows")
---local tbWindow = Windows:CreateWindow("Jai_MoreDisciplesWindow")
+local Windows = GameMain:GetMod("Windows")
+local tbWindow = Windows:CreateWindow("Jai_MoreDisciplesWindow")
 
--- local sizes = {
--- 	{6,12,18,24},
--- 	{12,12,24,36},
--- 	{48,48,60,72}
--- }
+local sizes = {
+	{6,12,18,24},
+	{12,12,24,36},
+	{48,48,60,72}
+}
 
--- function Mod:OnLoad(tbLoad)
---     self.data = tbLoad or {}
--- 	self.data.index = self.data.index or 1
+function Mod:OnLoad(tbLoad)
+    self.data = tbLoad or {}
+	self.data.index = self.data.index or 1
 	
---     self:setMaxDisciples(self.data.index)
--- end
+    self:setMaxDisciples(self.data.index)
+end
 
--- function Mod:OnSave()
--- 	local data = self.data or {}
--- 	data.index = data.index or 1
--- 	return data
--- end
+function Mod:OnSave()
+	local data = self.data or {}
+	data.index = data.index or 1
+	return data
+end
 
 -- function Mod:OnRender()
 -- 	if Adapter ~= nil then
@@ -56,7 +55,7 @@ local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 -- 	end
 -- end
 
-function Mod:OnOnit()
+function Mod:OnInit()
 	-- self.data = self.data or {}
 	self:registerAdapter()
 end
@@ -78,50 +77,49 @@ end
 	--CS.XiaWorld.GameDefine.SchoolMaxDNpc ={6,12,18,24};
 --end
 
--- function Mod:setMaxDisciples(index)
--- 	CS.XiaWorld.GameDefine.SchoolMaxNpc = sizes[index]
--- 	CS.XiaWorld.GameDefine.SchoolMaxDNpc = sizes[index]
--- end
+function Mod:setMaxDisciples(index)
+	CS.XiaWorld.GameDefine.SchoolMaxNpc = sizes[index]
+	CS.XiaWorld.GameDefine.SchoolMaxDNpc = sizes[index]
+end
 
---function tbWindow:OnInit()
---function test()
-	--self.window.contentPane = UIPackage.CreateObject("Jai_MoreDisciples", "ConfigWindow")
-	--self.window.closeButton = self:GetChild("frame"):GetChild("n5")
-	--self.window:Center()
+function tbWindow:OnInit()
+	self.window.contentPane = UIPackage.CreateObject("Jai_MoreDisciples", "ConfigWindow")
+	self.window.closeButton = self:GetChild("frame"):GetChild("n5")
+	self.window:Center()
 	
-	--local frame = self:GetChild("frame")
-	----frame.title = XT("快捷键连接器")
-	--frame.title = "More Disciples"
+	local frame = self:GetChild("frame")
+	--frame.title = XT("快捷键连接器")
+	frame.title = "More Disciples"
 
-	--local titleBox = frame:GetChild("n6")
-	--local titleText = frame:GetChild("title")
+	local titleBox = frame:GetChild("n6")
+	local titleText = frame:GetChild("title")
 
-	--titleBox.maxWidth = 200
-	--titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
-	--titleBox.width = titleText.width + 100
-	--titleText.fontsize = 18
-	--titleBox.height = 50
-	--titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
+	titleBox.maxWidth = 200
+	titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
+	titleBox.width = titleText.width + 100
+	titleText.fontsize = 18
+	titleBox.height = 50
+	titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
 
-	--if Mod.data == nil then
-		--return
-	--end
+	if Mod.data == nil then
+		return
+	end
 
-	----local group = self:GetChild("options")
-	----local optionDefault = group:GetChild("option-default")
-	----local optionDesktop = group:GetChild("option-desktop")
-	----local optionMax = group:GetChild("option-max")
+	--local group = self:GetChild("options")
+	--local optionDefault = group:GetChild("option-default")
+	--local optionDesktop = group:GetChild("option-desktop")
+	--local optionMax = group:GetChild("option-max")
 	
-	--local radioController = self:GetController("radio")
-	--radioController.onChanged:Add(
-		--function(context)
-			--local controller = context.sender;
-			--local index = controller.selectedIndex;
+	local radioController = self:GetController("radio")
+	radioController.onChanged:Add(
+		function(context)
+			local controller = context.sender;
+			local index = controller.selectedIndex;
 
-			--Mod.data = Mod.data or {}
-			--Mod.data.index = index
+			Mod.data = Mod.data or {}
+			Mod.data.index = index
 			
-			--Mod:setMaxDisciples(index)
-		--end
-	--)
---end
+			Mod:setMaxDisciples(index)
+		end
+	)
+end

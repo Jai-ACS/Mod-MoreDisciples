@@ -50,22 +50,22 @@ function Jai_MoreDisciplesWindow:OnInit()
 	self.window.closeButton = self:GetChild("frame"):GetChild("n5")
 	self.window:Center()
 	
-	local frame = self:GetChild("frame")
-	frame.title = "More Disciples"
+	-- local frame = self:GetChild("frame")
+	-- frame.title = "More Disciples"
 
-	local titleBox = frame:GetChild("n6")
-	local titleText = frame:GetChild("title")
+	-- local titleBox = frame:GetChild("n6")
+	-- local titleText = frame:GetChild("title")
 
-	titleBox.maxWidth = 200
-	titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
-	titleBox.width = titleText.width + 100
-	titleText.fontsize = 18
-	titleBox.height = 50
-	titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
+	-- titleBox.maxWidth = 200
+	-- titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
+	-- titleBox.width = titleText.width + 100
+	-- titleText.fontsize = 18
+	-- titleBox.height = 50
+	-- titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
 
-	if Mod.data == nil then
-		return
-	end
+	-- if Mod.data == nil then
+	-- 	return
+	-- end
 
 	-- --local group = self:GetChild("options")
 	-- --local optionDefault = group:GetChild("option-default")

@@ -23,38 +23,6 @@ function Mod:OnSave()
 	return data
 end
 
--- function Mod:OnRender()
--- 	if Adapter ~= nil then
--- 		self.initialized = true
--- 	end
-	
--- 	if self.initialized then
--- 		return
--- 	end
-
--- 	if self.count == nil then
--- 		self.tryGetAdapter()
-		
--- 		if not self.initialized then
--- 			self.count = 1
--- 		end
--- 	elseif self.count >= 100 then
--- 		self.tryGetAdapter()
--- 		count = 1
--- 	else
--- 		count = count + 1
--- 	end
--- end
-
--- function Mod:tryGetAdapter()
--- 	Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
-
--- 	if Adapter ~= nil then
--- 		self:registerAdapter()
--- 		self.initialized = true
--- 	end
--- end
-
 function Mod:OnInit()
 	-- self.data = self.data or {}
 	self:registerAdapter()
@@ -71,11 +39,6 @@ function Mod:registerAdapter()
 		end
 	)
 end
-
---function Mod:OnEnter()
-	--CS.XiaWorld.GameDefine.SchoolMaxNpc = {6,12,18,24}
-	--CS.XiaWorld.GameDefine.SchoolMaxDNpc ={6,12,18,24};
---end
 
 function Mod:setMaxDisciples(index)
 	CS.XiaWorld.GameDefine.SchoolMaxNpc = sizes[index]

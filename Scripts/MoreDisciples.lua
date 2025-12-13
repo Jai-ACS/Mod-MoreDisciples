@@ -46,9 +46,9 @@ function Mod:setMaxDisciples(index)
 end
 
 function Jai_MoreDisciplesWindow:OnInit()
-	self.window.contentPane = UIPackage.CreateObject("Jai_MoreDisciples", "ConfigWindow")
-	self.window.closeButton = self:GetChild("frame"):GetChild("n5")
-	self.window:Center()
+	-- self.window.contentPane = UIPackage.CreateObject("Jai_MoreDisciples", "ConfigWindow")
+	-- self.window.closeButton = self:GetChild("frame"):GetChild("n5")
+	-- self.window:Center()
 	
 	-- local frame = self:GetChild("frame")
 	-- frame.title = "More Disciples"

@@ -29,7 +29,7 @@ function Mod:registerAdapter()
 		return
 	end
 	
-	Adapter:register("More Disciples", "Configure...",
+	Adapter:register(XT("增加弟子"), XT("设定"),
 		function()
 			-- Only create window when adapter is available
 			local Windows = GameMain:GetMod("Windows")

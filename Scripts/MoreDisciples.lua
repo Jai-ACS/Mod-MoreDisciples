@@ -67,10 +67,10 @@ function Jai_MoreDisciplesWindow:OnInit()
 	local selectedIndex = Mod.data.index or 1
 	
 	local radioController = self.window.contentPane:GetController("radio")
-	radioController:SetSelectedIndex(selectedIndex)
+	radioController:SetSelectedIndex(selectedIndex - 1) -- Lua's index start from 1, while FairyGUI's index start from 0
 	radioController.onChanged:Add(
 		function()
-			local index = radioController.selectedIndex
+			local index = radioController.selectedIndex + 1
 			Mod.data.index = index
 			
 			Mod:setMaxDisciples(index)

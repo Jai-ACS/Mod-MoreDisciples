@@ -1,10 +1,7 @@
 local Mod = GameMain:GetMod("Jai_MoreDisciples")
 local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 
-local Windows = GameMain:GetMod("Windows")
-local Jai_MoreDisciplesWindow = Windows:CreateWindow("Jai_MoreDisciplesWindow")
-
-local sizes = {
+local sectSizes = {
 	{6,12,18,24},
 	{12,12,24,36},
 	{48,48,60,72}
@@ -24,7 +21,6 @@ function Mod:OnSave()
 end
 
 function Mod:OnInit()
-	-- self.data = self.data or {}
 	self:registerAdapter()
 end
 
@@ -35,17 +31,21 @@ function Mod:registerAdapter()
 	
 	Adapter:register("More Disciples", "Configure...",
 		function()
-			Jai_MoreDisciplesWindow:Show()
+			-- Only create window when adapter is available
+			local Windows = GameMain:GetMod("Windows")
+			local window = Windows:CreateWindow("Jai_MoreDisciplesWindow")
+			window.OnInit = OnConfigWindowInit
+			window:Show()
 		end
 	)
 end
 
 function Mod:setMaxDisciples(index)
-	CS.XiaWorld.GameDefine.SchoolMaxNpc = sizes[index]
-	CS.XiaWorld.GameDefine.SchoolMaxDNpc = sizes[index]
+	CS.XiaWorld.GameDefine.SchoolMaxNpc = sectSizes[index]
+	CS.XiaWorld.GameDefine.SchoolMaxDNpc = sectSizes[index]
 end
 
-function Jai_MoreDisciplesWindow:OnInit()
+function OnConfigWindowInit(self)
 	self.window.contentPane = UIPackage.CreateObject("Jai_MoreDisciples", "ConfigWindow")
 	self.window.closeButton = self:GetChild("frame"):GetChild("n5")
 	self.window:Center()
@@ -58,19 +58,27 @@ function Jai_MoreDisciplesWindow:OnInit()
 
 	titleBox.maxWidth = 250
 	titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
-	titleBox.width = titleText.width + 100
+	titleBox.width = titleText.width + 125
 	titleText.fontsize = 18
 	titleBox.height = 50
 	titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
 
 	Mod.data = Mod.data or {}
 	local selectedIndex = Mod.data.index or 1
+	if selectedIndex < 1 then
+		selectedIndex = 1
+	end
 	
 	local radioController = self.window.contentPane:GetController("radio")
 	radioController:SetSelectedIndex(selectedIndex - 1) -- Lua's index start from 1, while FairyGUI's index start from 0
 	radioController.onChanged:Add(
 		function()
 			local index = radioController.selectedIndex + 1
+			
+			if index > #sectSizes then
+				index = #sectSizes
+			end
+			
 			Mod.data.index = index
 			
 			Mod:setMaxDisciples(index)

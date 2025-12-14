@@ -68,7 +68,7 @@ function Jai_MoreDisciplesWindow:OnInit()
 	--local optionDesktop = group:GetChild("option-desktop")
 	--local optionMax = group:GetChild("option-max")
 	
-	local radioController = self:GetController("radio")
+	local radioController = self.window.contentPane:GetController("radio")
 	radioController.onChanged:Add(
 		function(context)
 			local controller = context.sender;

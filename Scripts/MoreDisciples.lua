@@ -63,10 +63,6 @@ function Jai_MoreDisciplesWindow:OnInit()
 	titleBox.height = 50
 	titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
 
-	if Mod.data == nil then
-		return
-	end
-
 	--local group = self:GetChild("options")
 	--local optionDefault = group:GetChild("option-default")
 	--local optionDesktop = group:GetChild("option-desktop")

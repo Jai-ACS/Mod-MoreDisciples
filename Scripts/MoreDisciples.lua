@@ -56,25 +56,21 @@ function Jai_MoreDisciplesWindow:OnInit()
 	local titleBox = frame:GetChild("n6")
 	local titleText = frame:GetChild("title")
 
-	titleBox.maxWidth = 200
+	titleBox.maxWidth = 250
 	titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
 	titleBox.width = titleText.width + 100
 	titleText.fontsize = 18
 	titleBox.height = 50
 	titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
 
-	--local group = self:GetChild("options")
-	--local optionDefault = group:GetChild("option-default")
-	--local optionDesktop = group:GetChild("option-desktop")
-	--local optionMax = group:GetChild("option-max")
+	Mod.data = Mod.data or {}
+	local selectedIndex = Mod.data.index or 1
 	
 	local radioController = self.window.contentPane:GetController("radio")
+	radioController:setSelectedIndex(selectedIndex)
 	radioController.onChanged:Add(
-		function(context)
-			local controller = context.sender;
-			local index = controller.selectedIndex;
-
-			Mod.data = Mod.data or {}
+		function()
+			local index = radioController.selectedIndex
 			Mod.data.index = index
 			
 			Mod:setMaxDisciples(index)

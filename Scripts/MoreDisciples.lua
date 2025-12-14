@@ -67,7 +67,7 @@ function Jai_MoreDisciplesWindow:OnInit()
 	local selectedIndex = Mod.data.index or 1
 	
 	local radioController = self.window.contentPane:GetController("radio")
-	radioController:setSelectedIndex(selectedIndex)
+	radioController:SetSelectedIndex(selectedIndex)
 	radioController.onChanged:Add(
 		function()
 			local index = radioController.selectedIndex

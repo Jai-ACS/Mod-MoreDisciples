@@ -51,17 +51,17 @@ function OnConfigWindowInit(self)
 	self.window:Center()
 	
 	local frame = self:GetChild("frame")
-	frame.title = "More Disciples"
+	frame.title = XT("增加弟子")
 
-	local titleBox = frame:GetChild("n6")
-	local titleText = frame:GetChild("title")
+	-- local titleBox = frame:GetChild("n6")
+	-- local titleText = frame:GetChild("title")
 
-	titleBox.maxWidth = 250
-	titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
-	titleBox.width = titleText.width + 125
-	titleText.fontsize = 18
-	titleBox.height = 50
-	titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
+	-- titleBox.maxWidth = 250
+	-- titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
+	-- titleBox.width = titleText.width + 125
+	-- titleText.fontsize = 18
+	-- titleBox.height = 50
+	-- titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
 
 	Mod.data = Mod.data or {}
 	local selectedIndex = Mod.data.index or 1

@@ -2,9 +2,9 @@ local Mod = GameMain:GetMod("Jai_MoreDisciples")
 local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 
 local sectSizes = {
-	{6,12,18,24},
-	{12,12,24,36},
-	{48,48,60,72}
+	{06, 12, 18, 24},
+	{12, 12, 24, 36},
+	{48, 48, 60, 72}
 }
 
 function Mod:OnLoad(tbLoad)
@@ -57,17 +57,6 @@ function OnConfigWindowInit(self)
 	local frame = self:GetChild("frame")
 	frame.title = XT("增加弟子")
 
-	-- local titleBox = frame:GetChild("n6")
-	-- local titleText = frame:GetChild("title")
-
-	-- titleBox.maxWidth = 250
-	-- titleText.autoSize = CS.FairyGUI.AutoSizeType.Both
-	-- titleBox.width = titleText.width + 125
-	-- titleText.fontsize = 18
-	-- titleBox.height = 50
-	-- titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
-
-	-- local optionsGroup = self:GetChild("options")
 	self:GetChild("option-default").title = XT("默认")
 	self:GetChild("option-desktop").title = XT("和电脑版持平")
 	self:GetChild("option-max").title = XT("最大增幅")
@@ -89,7 +78,6 @@ function OnConfigWindowInit(self)
 			end
 			
 			Mod.data.index = index
-			
 			Mod:setMaxDisciples(index)
 		end
 	)

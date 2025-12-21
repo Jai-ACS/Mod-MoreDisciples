@@ -67,6 +67,11 @@ function OnConfigWindowInit(self)
 	-- titleBox.height = 50
 	-- titleText.y = titleBox.y + (titleBox.height - titleText.height) / 2
 
+	local optionsGroup = self:GetChild("options")
+	optionsGroup:GetChild("option-default").title = XT("默认")
+	optionsGroup:GetChild("option-desktop").title = XT("和电脑版持平")
+	optionsGroup:GetChild("option-max").title = XT("最大增幅")
+
 	Mod.data = Mod.data or {}
 	local selectedIndex = Mod.data.index or 1
 	if selectedIndex < 1 then

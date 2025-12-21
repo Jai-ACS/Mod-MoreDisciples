@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="300,200">
+  <controller name="radio" exported="true" pages="0,,1,,2," selected="0"/>
+  <displayList>
+    <component id="n36_r699" name="frame" src="r6996" fileName="WindowFrame.xml" xy="0,0" size="300,200">
+      <Label title="More Disciples"/>
+    </component>
+    <component id="n33_r699" name="option-default" src="cdpp0" fileName="RadioButton.xml" xy="81,80" size="81,23" group="n27_p1w4">
+      <Button checked="true" title="Default" controller="radio" page="0"/>
+    </component>
+    <component id="n34_r699" name="option-desktop" src="cdpp0" fileName="RadioButton.xml" xy="81,110" size="138,23" group="n27_p1w4">
+      <Button title="Match Desktop" controller="radio" page="1"/>
+    </component>
+    <component id="n35_r699" name="option-max" src="cdpp0" fileName="RadioButton.xml" xy="81,140" size="55,23" group="n27_p1w4">
+      <Button title="Max" titleFontSize="16" controller="radio" page="2"/>
+    </component>
+    <group id="n27_p1w4" name="options" xy="81,80" size="138,83" advanced="true">
+      <relation target="" sidePair="center-center"/>
+    </group>
+  </displayList>
+</component>

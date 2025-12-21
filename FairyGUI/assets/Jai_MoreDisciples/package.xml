@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="mkbgroma">
+  <resources>
+    <component id="cdpp0" name="RadioButton.xml" path="/"/>
+    <component id="cdpp5" name="ConfigWindow.xml" path="/" exported="true"/>
+    <component id="r6996" name="WindowFrame.xml" path="/"/>
+  </resources>
+  <publish name="" path="E:\ljyiiima\Games\了不起的修仙模拟器\Mobile\Modding\Mods\Jai_MoreDisciples\UI" packageCount="2"/>
+</packageDescription>

@@ -28,6 +28,10 @@ function Mod:registerAdapter()
 	if Adapter == nil then
 		return
 	end
+
+	if (MultiLanguage ~= nil) then
+		MultiLanguage:Load("Jai_MoreDisciples")
+	end
 	
 	Adapter:register(XT("增加弟子"), XT("设定"),
 		function()

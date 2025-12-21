@@ -1,12 +1,12 @@
 {
 	"Name": "Jai_MoreDisciples",
-	"DisplayName": "More Disciples | 增加弟子数量",
+	"DisplayName": "More Disciples | 提高弟子数量",
 	"GameVersion": 1.2,
 	"Version": 1.0,
-	"Desc": "Test Version",
+	"Desc": "Allows higher disciple count limit, defaulting to 24 disciples (increased from 18) after reaching [Paradise] sect size. This limit can optionally be configured through the [Hotkey Adapter] mod.\r\n 1. Default\r\n 2. Match Desktop: The limits are adjusted to match the limits on desktop version of the game\r\n 3. Max: The limits are adjusted to the maximum, reaching 72 after reaching [Paradise] sect size (not recommended to use this setting)\r\n\r\n用于提高弟子数量上限，默认在门派达到【洞天】后提升到24名弟子。这上限能有选择性地通过【快捷键连接器】 MOD 被设定。\r\n 1. 默认\r\n 2. 和电脑版持平\r\n 3. 最大增幅：上限调整至极限，在门派达到【洞天】后提升到72名弟子",
 	"Author": "Jai",
 	"UIPackage": "UI/Jai_MoreDisciples",
-	"Tags": ["Function","Usability"],
+	"Tags": ["Function","Usability","ExcludeRealmsHeaven"],
 	"IncreasedDesc": "",
 	"Dependencies": null
 }

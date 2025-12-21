@@ -1,3 +1,6 @@
 Key	Value
 增加弟子	More Disciples
 设定	Configuration
+默认	Default
+和电脑版持平	Match Desktop
+最大增幅	Max

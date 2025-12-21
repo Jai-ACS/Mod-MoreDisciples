@@ -33,7 +33,7 @@ function Mod:registerAdapter()
 		MultiLanguage:Load("Jai_MoreDisciples")
 	end
 	
-	Adapter:register(XT("增加弟子"), XT("设定"),
+	Adapter:register(XT("提高弟子数量"), XT("设定"),
 		function()
 			-- Only create window when adapter is available
 			local Windows = GameMain:GetMod("Windows")
@@ -55,7 +55,7 @@ function OnConfigWindowInit(self)
 	self.window:Center()
 	
 	local frame = self:GetChild("frame")
-	frame.title = XT("增加弟子")
+	frame.title = XT("提高弟子数量")
 
 	self:GetChild("option-default").title = XT("默认")
 	self:GetChild("option-desktop").title = XT("和电脑版持平")
